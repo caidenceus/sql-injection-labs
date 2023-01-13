@@ -23,11 +23,13 @@ function data_row(string $product_name, string $product_price) {
   </head>
   <body>
 
-    <form method="post">
-      <label for="filter">Product name filter:</label><br>
-      <input type="text" id="filter" name="filter"><br>
-      <input type="submit" value="Submit">
-    </form>
+    <div class="form-container">
+      <form method="post">
+        <label for="filter">Product name filter:</label><br>
+        <input type="text" id="filter" name="filter"><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
 
 <?php
 data_row('Product name', 'Product Price');
