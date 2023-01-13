@@ -40,6 +40,8 @@ if (isset($_POST['filter'])) {
     while($row = mysqli_fetch_assoc($result)) {
         data_row($row['name'], $row['price']);
     }
+    
+    $_POST = array();
 }
 else {
     $query = "SELECT * FROM product";
