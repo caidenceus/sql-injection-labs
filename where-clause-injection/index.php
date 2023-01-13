@@ -1,3 +1,14 @@
+<!--
+=============== PROBLEM ===============
+Problem: 
+  Retrieve all usernames and passwords from the user table.
+  (Solution is at bottom of this page)
+
+Difficulty: 
+  Easy
+=============== PROBLEM ===============
+-->
+
 <?php 
 $db = mysqli_connect("localhost", "sql_inject", "sql_inject", "sql_injection_labs");
 
@@ -37,7 +48,6 @@ data_row('Product name', 'Product Price');
 if (isset($_POST['filter'])) {
     $filter = $_POST['filter'];
     $query = "SELECT * FROM product WHERE name = '$filter'";
-    echo $query;
     $result = mysqli_query($db, $query);
     
     while($row = mysqli_fetch_assoc($result)) {
@@ -60,3 +70,10 @@ else {
 </html>
 
 <?php mysqli_close($db); ?>
+
+
+<!--
+=============== SOLUTION ===============
+' union select * from user#
+
+-->
