@@ -37,6 +37,7 @@ data_row('Product name', 'Product Price');
 if (isset($_POST['filter'])) {
     $filter = $_POST['filter'];
     $query = "SELECT * FROM product WHERE name = '$filter'";
+    echo $query;
     $result = mysqli_query($db, $query);
     
     while($row = mysqli_fetch_assoc($result)) {
