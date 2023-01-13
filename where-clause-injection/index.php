@@ -10,7 +10,7 @@ if (mysqli_connect_errno()) {
 function data_row(string $product_name, string $product_price) {
     echo '<div class="data-container">';
     echo "<p>$product_name</p>";
-    echo "<p>$product_prize</p>";
+    echo "<p>$product_price</p>";
     echo '</div>';
 }
 ?>
