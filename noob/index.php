@@ -9,23 +9,6 @@ Difficulty:
 =============== PROBLEM ===============
 -->
 
-<?php 
-$db = mysqli_connect("localhost", "sql_inject", "sql_inject", "sql_injection_labs");
-
-/* check connection */
-if (mysqli_connect_errno()) {
-    echo "Connect failed: " . mysqli_connect_error();
-    exit();
-}
-
-function data_row(string $product_name, string $product_price) {
-    echo '<div class="data-container">';
-    echo "<p>$product_name</p>";
-    echo "<p>$product_price</p>";
-    echo '</div>';
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,6 +26,22 @@ function data_row(string $product_name, string $product_price) {
     </div>
 
 <?php
+
+$db = mysqli_connect("localhost", "sql_inject", "sql_inject", "sql_injection_labs");
+
+/* check connection */
+if (mysqli_connect_errno()) {
+    echo "Connect failed: " . mysqli_connect_error();
+    exit();
+}
+
+function data_row(string $product_name, string $product_price) {
+    echo '<div class="data-container">';
+    echo "<p>$product_name</p>";
+    echo "<p>$product_price</p>";
+    echo '</div>';
+}
+
 data_row('Product name', 'Product Price');
 
 if (isset($_POST['filter'])) {
