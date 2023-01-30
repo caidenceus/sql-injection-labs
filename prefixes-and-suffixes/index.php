@@ -30,13 +30,10 @@ if (isset($_GET['username'])) {
 
     if (isset($_GET['prefix'])) {
         $username = $_GET['prefix'] . $username;
-        echo $username;
     }
 
-    // Database is not queried if the prefix is not -SIL defined in the HTML
-    if (!preg_match('/SIL-/', $username)) {
-        echo '<h2>Wrong username format</h2>';
-    } else {
+    // Database is not queried if the prefix is not SIL- defined in the HTML
+    if (preg_match('/SIL-/', $username)) {
         $username = str_replace("-SIL", "", $username);
         $query = "SELECT first_name, last_name FROM username_id_tbl WHERE username = '$username'";
         $result = mysqli_query($db, $query);
