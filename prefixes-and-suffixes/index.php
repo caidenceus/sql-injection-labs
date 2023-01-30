@@ -10,7 +10,7 @@
       <form method="get">
         <label for="filter">Username:</label><br>
         <input type="text" id="username" name="username"><br>
-        <input type="text" id="prefix" name="prefix" value="-SIL" class="hidden">
+        <input type="text" id="prefix" name="prefix" value="SIL-" class="hidden">
         <input type="submit" value="Submit">
       </form>
     </div>
@@ -29,11 +29,12 @@ if (isset($_GET['username'])) {
     $username = $_GET['username'];
 
     if (isset($_GET['prefix'])) {
-        $username = $prefix + $username;
+        $username = $_GET['prefix'] . $username;
+        echo $username;
     }
 
     // Database is not queried if the prefix is not -SIL defined in the HTML
-    if (!preg_match('/-SIL$/', $prefix)) {
+    if (!preg_match('/SIL-/', $username)) {
         echo '<h2>Wrong username format</h2>';
     } else {
         $username = str_replace("-SIL", "", $username);
