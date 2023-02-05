@@ -1,0 +1,22 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  width: 60%;
+}
+
+input[type=text] {
+  width: 100%;
+  height: 30px;
+}
+
+.data-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.hidden {
+  display: none;
+}
